@@ -8,10 +8,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "reset:modules": "rimraf node_modules/ && rimraf yarn.lock && rimraf src/*/node_modules",
+    "reset:modules": "rimraf src/*/.next && rimraf src/*/node_modules && rimraf yarn.lock && rimraf node_modules",
     "reset:cache": "yarn cache clean",
     "reset": "npm-run-all reset:modules reset:cache",
-    "serve:webapp": "node node_modules/.bin/next dev src/webapp"
+    "serve:webapp": "next dev src/webapp",
+    "start:webapp": "next start src/webapp",
+    "build:webapp": "build dev src/webapp"
   },
   "workspaces": [
     "src/*"
